@@ -5,7 +5,7 @@ set -o pipefail
 LINCHPINDIR=$1
 shift
 TARGETS=$*
-DRIVERS="dummy"
+DRIVERS="dummy os-server-new os-obj-new os-sg-new os-vol-new"
 
 export WORKSPACE="/tmp"
 
