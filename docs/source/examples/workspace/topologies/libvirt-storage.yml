@@ -1,0 +1,11 @@
+---
+topology_name: "libvirt_storage"
+resource_groups:
+  - resource_group_name: "libvirt_storage"
+    resource_group_type: "libvirt"
+    resource_definitions:
+      - name: mystorage
+        role: libvirt_storage
+        uri: 'qemu:///system'
+        type: dir
+        path: /var/lib/libvirt/images/linchpin

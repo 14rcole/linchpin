@@ -146,6 +146,9 @@ libvirt-centos6:
 libvirt-network:
   topology: libvirt-network.yml
 
+libvirt-storage:
+    topology: libvirt-storage.yml
+
 #
 #bkr:
 #  topology: bkr.yml

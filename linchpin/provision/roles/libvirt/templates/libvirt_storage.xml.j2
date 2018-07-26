@@ -1,0 +1,47 @@
+<pool type="{{ res_def['type'] }}">
+  <name>{{ res_def['res_name'] | default(res_def['name'])  }}</name>
+  <source>
+    <name>{{ res_def['res_name'] | default(res_def['name']) }}</name>
+    {% if res_def['device_path'] is defined %}
+      <device path="{{ res_def['device_path'] }}" />
+    {% endif %}
+    {% if res_def['host_name'] is defined %}
+      {% if res_def['port'] is defined %}
+        <host name="{{ res_def['host_name'] }}" port="{{ res_def['port'] }}" />
+      {% else %}
+        <host name="{{ res_def['host_name'] }}" />
+      {% endif %}
+    {% endif %}
+    {% if res_def['dir_path'] is defined %}
+      <dir path="{{ res_def['dir_path']  }}" />
+    {% endif %}
+    {% if res_def['source_format_type'] is defined %}
+      <format type="{{ res_def['source_format_type']  }}" />
+    {% endif %}
+    {% if res_def['adapter_name'] is defined %}
+      <adapter name="{{ res_def['adapter_name']  }}" />
+    {% endif %}
+    {% if res_def['auth_username'] is defined and res_def['auth_type'] is defined and res_def['secret_uuid'] is defined %}
+      <auth username="{{ res_def['auth_username'] }}" type="{{ res_def['auth_type']  }}" />
+        <secret uuid="{{ res_def['secret_uuid'] }}" />
+      </auth>
+    {% endif %}
+  </source>
+  {% if res_def['capacity'] is defined and res_def['capacity_unit'] is defined %}
+    <capacity unit="{{ res_def['capacity_unit'] }}">res_def['capacity']</capacity>
+  {% endif %}
+  {% if res_def['allocation'] is defined and res_def['allocation_unit'] is defined %}
+    <allocation unit="{{ res_def['allocation_unit'] }}">res_def['allocation']</allocation>
+  {% endif %}
+  <target>
+    <path>{{ res_def['path'] }}</path>
+    {% if res_def['target_format_type'] is defined %}
+      <format type="{{ res_def['target_format_type']  }}" />
+    {% endif %}
+    {% if res_def['mode'] is defined %}
+      <permissions>
+        <mode>0755</mode>
+      </permissions>
+    {% endif %}
+  </target>
+</pool>

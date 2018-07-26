@@ -1,6 +1,10 @@
 ---
-#- name: "provision libvirt storage"
-#  include: provision_libvirt_storage.yml
+- name: "provision libvirt storage"
+  include: provision_libvirt_storage.yml
+  when:
+    - res_def['role'] == "libvirt_storage"
+    - state == "present"
+
 - name: "Get host from uri"
   set_fact:
     uri_hostname: "{{ res_def['uri'] | get_host_from_uri }}"
@@ -12,7 +16,7 @@
 - name: "provision libvirt network"
   include: provision_libvirt_network.yml
   when:
-    - resource_type == "libvirt_network"
+    - res_def['role'] == "libvirt_network"
     - state == "present"
 
 - name: "Set the resource node name"
@@ -27,12 +31,12 @@
 - name: "provision libvirt node"
   include: provision_libvirt_node.yml
   when:
-    - resource_type == "libvirt_node"
+    - res_def['role'] == "libvirt_node"
     - state == "present"
 
 - name: "teardown libvirt node"
   include: teardown_libvirt_node.yml
   when:
-    - resource_type == "libvirt_node"
+    - res_def['role'] == "libvirt_node"
     - state == "absent"
 
