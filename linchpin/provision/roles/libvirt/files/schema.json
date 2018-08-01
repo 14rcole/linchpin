@@ -79,6 +79,33 @@
                     "size": { "type": "integer", "required": true },
                     "path": { "type": "integer", "required": true }
                 }
+            },
+            {
+                "type": "dict",
+                "schema": {
+                    "role": {
+                        "type": "string",
+                        "required": true,
+                        "allowed": ["libvirt_storage"] },
+                    "name": { "type": "string", "required": true },
+                    "type": 
+                    "pool": { "type": "string", "required": false },
+                    "allocation": { "type": "integer", "required": false },
+                    "allocation_units": { "type": "string", "required": false },
+                    "capacity": { "type": "integer", "required": false },
+                    "capacity_units": { "type": "string", "required": false },
+                    "target" {
+                        "type": "dict",
+                        "schema": {
+                            "format": { "type": "string", "required": false },
+                            "owner": { "type": "integer", "required": false },
+                            "group":  { "type": "integer", "required": false },
+                            "mode": { "type": "string", "required": false },
+                            "label": { "type": "string", "required": false },
+                            "nocow": { "type": "boolean", "required": false }
+                        }
+                    }
+                }
             }]
         }
     }

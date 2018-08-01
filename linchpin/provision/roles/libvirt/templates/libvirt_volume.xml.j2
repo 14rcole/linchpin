@@ -1,0 +1,33 @@
+<volume type="{{ res_def['type'] }}">
+  <name>{{ res_def['res_name'] | default(res_def['name']) }}</name>
+  {% if res_def['allocation'] is defined %}
+    <allocation unit="{{ res_def['allocation_units] | default('B') }}">res_def['allocation']</allocation>
+  {% endif %}
+  {% if res_def['capacity'] is defined %}
+    <capacity unit="{{ res_def['capacity_units] | default('B') }}">res_def['capacity']</capacity>
+  {% endif %}
+  {% if res_def['target'] is defined %}
+    <target>
+    {% if res_def['target']['format'] is defined %}
+      <format type="{{ res_def['target']['format'] }}" />
+    {% endif %}
+    <permissions>
+      {% if res_def['target']['owner'] is defined %}
+        <owner>res_def['target]['owner']</owner>
+      {% endif %}
+      {% if res_def['target']['group'] is defined %}
+        <owner>res_def['target]['group']</owner>
+      {% endif %}
+      {% if res_def['target']['mode'] is defined %}
+        <owner>res_def['target]['mode']</owner>
+      {% endif %}
+      {% if res_def['target']['label'] is defined %}
+        <owner>res_def['target]['label']</owner>
+      {% endif %}
+    </permissions>
+    {% if res_def['target']['nocow'] is defined and res_def['target']['nocow'] is True %}
+      <nocow />
+    {% endif %}
+    </target>  
+  {% endif %}
+</volume>

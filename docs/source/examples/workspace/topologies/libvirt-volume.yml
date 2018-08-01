@@ -1,0 +1,16 @@
+---
+topology_name: libvirt-volume
+resource_groups:
+  - resource_group_name: libvirt-volume
+    resource_group_type: libvirt
+    resource_definitions:
+      - role: libvirt_volume
+        name: myvolume
+        pool: default
+        allocation: 0
+        capacity: 1
+        capacity_units: T
+        target:
+          - owner: 1000
+            mode: 0644
+            nocow: false

@@ -1,0 +1,8 @@
+---
+- name: "define volume template"
+  template:
+      src: ../templates/libvirt_volume.xml.j2
+      dest: "/tmp.{{ libvirt_resource_name }}"
+
+- name: "create volume"
+  command: virsh vol-create --file /tmp/{{ libvirt_resource_name }} --pool {{ res_defs['pool'] | default('default') }}

@@ -1,0 +1,329 @@
+Processing target: libvirt-new
+rundb_id: 6
+uhash: 6c27be
+calling: preup
+hook preup initiated
+[DEPRECATION WARNING]: Included file '/home/ryan/.virtualenvs/linchpin/lib/python2.7/site-
+packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/update_aws_cfn_outputs.yml' not found, however since this include
+ is not explicitly marked as 'static: yes', we will try and include it dynamically later. In the future, this will be an 
+error unless 'static: no' is used on the include task. If you do not want missing includes to be considered dynamic, use 
+'static: yes' on the include or set the global ansible.cfg options to make all includes static for tasks and/or handlers.
+ This feature will be removed in version 2.7. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+
+PLAYBOOK: libvirt.yml ****************************************************************************************************
+
+PLAY [schema check and Pre Provisioning Activities on topology_file] *****************************************************
+
+TASK [Gathering Facts] ***************************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/libvirt.yml:4
+ok: [localhost]
+
+TASK [common : assign async value] ***************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/common/tasks/main.yml:2
+ok: [localhost] => {"ansible_facts": {"async": false}, "changed": false}
+
+TASK [common : declare async_types array] ********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/common/tasks/main.yml:7
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [common : output vars] **********************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/common/tasks/main.yml:12
+ok: [localhost] => {"ansible_facts": {"topology_outputs": {}}, "changed": false}
+
+PLAY [Provisioning libvirt resources] ************************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/libvirt.yml:10
+ok: [localhost]
+
+TASK [libvirt : Gather facts] ********************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/main.yml:2
+ok: [localhost]
+
+TASK [libvirt : declaring output vars] ***********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/main.yml:6
+ok: [localhost] => {"ansible_facts": {"topology_outputs_libvirt_nodes": []}, "changed": false}
+
+TASK [libvirt : Initiating libvirt resource group] ***********************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/main.yml:10
+included: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_resource_group.yml for localhost
+
+TASK [libvirt : gather resource definitions of current group] ************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_resource_group.yml:2
+included: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml for localhost
+
+TASK [libvirt : provision libvirt storage] *******************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:2
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : teardown libvirt node] ***********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:8
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Get host from uri] ***************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:15
+ok: [localhost] => {"ansible_facts": {"uri_hostname": "localhost"}, "changed": false}
+
+TASK [libvirt : set resource_type] ***************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:19
+ok: [localhost] => {"ansible_facts": {"resource_type": "libvirt_node"}, "changed": false}
+
+TASK [libvirt : provision libvirt network] *******************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:23
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Set the resource node name] ******************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:29
+ok: [localhost] => {"ansible_facts": {"libvirt_resource_name": "centos71"}, "changed": false}
+
+TASK [libvirt : Create name using uhash value] ***************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:33
+ok: [localhost] => {"ansible_facts": {"libvirt_resource_name": "centos71-6c27be"}, "changed": false}
+
+TASK [libvirt : provision libvirt node] **********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_res_defs.yml:38
+included: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml for localhost
+
+TASK [libvirt : register resource count] *********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:1
+changed: [localhost] => {"changed": true, "cmd": "python -c \"print [x for x in range( 0, 1 )]\"", "delta": "0:00:00.013136", "end": "2018-07-31 16:01:46.094489", "rc": 0, "start": "2018-07-31 16:01:46.081353", "stderr": "", "stderr_lines": [], "stdout": "[0]", "stdout_lines": ["[0]"]}
+
+TASK [libvirt : does node already exist] *********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:5
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: VMNotFound: virtual machine centos71-6c27be_0 not found
+failed: [localhost] (item=[u'centos71-6c27be', 0]) => {"changed": false, "msg": "virtual machine centos71-6c27be_0 not found", "nodeinfo": ["centos71-6c27be", 0]}
+...ignoring
+
+TASK [libvirt : set empty local_image_path] ******************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:18
+ok: [localhost] => {"ansible_facts": {"local_image_path": ""}, "changed": false}
+
+TASK [libvirt : set empty img_src_ext] ***********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:22
+ok: [localhost] => {"ansible_facts": {"img_src_ext": ""}, "changed": false}
+
+TASK [libvirt : copy image_src: localhost] *******************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:26
+included: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml for localhost
+
+TASK [libvirt : set local_image_path] ************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:2
+ok: [localhost] => {"ansible_facts": {"local_image_path": "/var/lib/libvirt/images/linchpin/"}, "changed": false}
+
+TASK [libvirt : delegate_to localhost :ensure local_image_path directory exists] *****************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:6
+ok: [localhost] => {"changed": false, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/var/lib/libvirt/images/linchpin/", "secontext": "unconfined_u:object_r:virt_image_t:s0", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [libvirt : set image_src_basename] **********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:13
+ok: [localhost] => {"ansible_facts": {"image_src_basename": "CentOS-7-x86_64-GenericCloud-1608.qcow2.xz"}, "changed": false}
+
+TASK [libvirt : Register local_image_src absolute path] ******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:17
+ok: [localhost] => {"ansible_facts": {"local_image_src": "/var/lib/libvirt/images/linchpin//CentOS-7-x86_64-GenericCloud-1608.qcow2.xz"}, "changed": false}
+
+TASK [libvirt : does a local copy of image_src exist?] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:22
+ok: [localhost] => {"changed": false, "stat": {"atime": 1533061150.6764445, "attr_flags": "e", "attributes": ["extents"], "block_size": 4096, "blocks": 485496, "charset": "binary", "checksum": "03e743cfd9d2bdcd9e7e9b5df7e34c520a783e31", "ctime": 1532542573.556658, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 917514, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "application/x-xz", "mode": "0644", "mtime": 1532542572.998652, "nlink": 1, "path": "/var/lib/libvirt/images/linchpin//CentOS-7-x86_64-GenericCloud-1608.qcow2.xz", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 248569364, "uid": 0, "version": "2710250054", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [libvirt : download image_src] **************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:28
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : determine image_src mime_type] ***************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:36
+ok: [localhost] => {"changed": false, "stat": {"atime": 1533061150.6764445, "attr_flags": "e", "attributes": ["extents"], "block_size": 4096, "blocks": 485496, "charset": "binary", "checksum": "03e743cfd9d2bdcd9e7e9b5df7e34c520a783e31", "ctime": 1532542573.556658, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 917514, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "application/x-xz", "mode": "0644", "mtime": 1532542572.998652, "nlink": 1, "path": "/var/lib/libvirt/images/linchpin//CentOS-7-x86_64-GenericCloud-1608.qcow2.xz", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 248569364, "uid": 0, "version": "2710250054", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [libvirt : set image_src for uncompressed files] ********************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:44
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : set image_src basename to remove .xz extension] **********************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:49
+ok: [localhost] => {"ansible_facts": {"img_src_basename": "CentOS-7-x86_64-GenericCloud-1608.qcow2"}, "changed": false}
+
+TASK [libvirt : set img_src for xz compressed files] *********************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:54
+ok: [localhost] => {"ansible_facts": {"img_src": "/var/lib/libvirt/images/linchpin/CentOS-7-x86_64-GenericCloud-1608.qcow2"}, "changed": false}
+
+TASK [libvirt : get img_src_basename extension] **************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:59
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : get img_src_basename extension] **************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:64
+ok: [localhost] => {"ansible_facts": {"img_src_ext": "qcow2"}, "changed": false}
+
+TASK [libvirt : does img_src exist at local_image_path?] *****************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:69
+ok: [localhost] => {"changed": false, "stat": {"atime": 1533061150.6764445, "attr_flags": "e", "attributes": ["extents"], "block_size": 4096, "blocks": 1744408, "charset": "binary", "checksum": "45eb86019e71860db5905269a2674b33c6e85eb4", "ctime": 1532542587.4038029, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 917516, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "application/octet-stream", "mode": "0644", "mtime": 1532542572.998652, "nlink": 1, "path": "/var/lib/libvirt/images/linchpin/CentOS-7-x86_64-GenericCloud-1608.qcow2", "pw_name": "root", "readable": true, "rgrp": true, "roth": true, "rusr": true, "size": 898236416, "uid": 0, "version": "3341834381", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [libvirt : uncompress xz local_image_src] ***************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:76
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : cp img_src to match node name] ***************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/copy_image_src_local.yml:81
+changed: [localhost] => (item=[u'/var/lib/libvirt/images/linchpin/', u'centos71-6c27be', 0, u'qcow2']) => {"changed": true, "checksum": "45eb86019e71860db5905269a2674b33c6e85eb4", "dest": "/var/lib/libvirt/images/linchpin/centos71-6c27be_0.qcow2", "gid": 0, "group": "root", "img_item": ["/var/lib/libvirt/images/linchpin/", "centos71-6c27be", 0, "qcow2"], "md5sum": "c2ebde45f03aa35c6d996c3de984a9d6", "mode": "0644", "owner": "root", "secontext": "system_u:object_r:virt_image_t:s0", "size": 898236416, "src": "/root/.ansible/tmp/ansible-tmp-1533067309.85-119143462378873/source", "state": "file", "uid": 0}
+
+TASK [libvirt : copy image_src: remote] **********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:30
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : set qemu_path] *******************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:34
+ok: [localhost] => {"ansible_facts": {"qemu_path": "/usr/bin/"}, "changed": false}
+
+TASK [libvirt : define node template] ************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:38
+skipping: [localhost] => (item=[u'qemu:///system', {'cloud_config': {'users': [{'name': u'herlo', 'sudo': u'ALL=(ALL) NOPASSWD:ALL', 'lock_passwd': True, 'gecos': u'Clint Savage', 'groups': u'wheel', 'ssh-import-id': u'gh:herlo'}]}, 'count': 1, 'name': u'centos71', 'uri': u'qemu:///system', 'ssh_key': u'libvirt', 'vcpus': 1, 'additional_storage': u'10G', 'role': u'libvirt_node', 'memory': 2048, 'arch': u'x86_64', 'networks': [{'name': u'default'}], 'image_src': u'http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz'}, 0, u'/var/lib/libvirt/images/linchpin/', u'qcow2'])  => {"changed": false, "definition": ["qemu:///system", {"additional_storage": "10G", "arch": "x86_64", "cloud_config": {"users": [{"gecos": "Clint Savage", "groups": "wheel", "lock_passwd": true, "name": "herlo", "ssh-import-id": "gh:herlo", "sudo": "ALL=(ALL) NOPASSWD:ALL"}]}, "count": 1, "image_src": "http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz", "memory": 2048, "name": "centos71", "networks": [{"name": "default"}], "role": "libvirt_node", "ssh_key": "libvirt", "uri": "qemu:///system", "vcpus": 1}, 0, "/var/lib/libvirt/images/linchpin/", "qcow2"], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : set_ssh_key_name] ****************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:52
+ok: [localhost] => {"ansible_facts": {"ssh_key_path": "~/.ssh/libvirt"}, "changed": false}
+
+TASK [libvirt : remote: does ssh key already exists ?] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:56
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : local: does ssh key already exists ?] ********************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:64
+ok: [localhost] => {"changed": false, "stat": {"atime": 1533066736.009234, "attr_flags": "e", "attributes": ["extents"], "block_size": 4096, "blocks": 8, "charset": "us-ascii", "checksum": "ff033418da64d03294e5a8b12b6c4aadb93edc50", "ctime": 1532546766.5111492, "dev": 64769, "device_type": 0, "executable": false, "exists": true, "gid": 0, "gr_name": "root", "inode": 1574218, "isblk": false, "ischr": false, "isdir": false, "isfifo": false, "isgid": false, "islnk": false, "isreg": true, "issock": false, "isuid": false, "mimetype": "text/plain", "mode": "0600", "mtime": 1532546766.5111492, "nlink": 1, "path": "/root/.ssh/libvirt", "pw_name": "root", "readable": true, "rgrp": false, "roth": false, "rusr": true, "size": 1675, "uid": 0, "version": "1812923557", "wgrp": false, "woth": false, "writeable": true, "wusr": true, "xgrp": false, "xoth": false, "xusr": false}}
+
+TASK [libvirt : remote: does ssh key already exists ?] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:70
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : local: Generate ssh keys when they don't exist] **********************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:78
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : remote: Generate ssh keys when they don't exist] *********************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:84
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : local: cat out contents of public key] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:92
+changed: [localhost] => {"changed": true, "cmd": "cat ~/.ssh/libvirt.pub", "delta": "0:00:00.002681", "end": "2018-07-31 16:01:56.258850", "rc": 0, "start": "2018-07-31 16:01:56.256169", "stderr": "", "stderr_lines": [], "stdout": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH3LeWIUQxhdwpMtbuY4j5GnWpl0hA7gsy5L0Dixb7vnuDfjkPv7rUXttVjQW172X/RjuviuByvnFUZlMOt3OVHhmUpQQvO2uFJGl7lid+EJCxHKFJh8sIMn3yP6PEAn7OZSVHZ1D8lVWuCmobur4vOLj0sCeRDso6fcKxpTj/a66u27NuMeLE/GNAYLuorZF9WSHqYzyCrZtn7DEVIphTWOiFg9zoQjuZ1u906gzU+E6Owxip3OVyWalZG4weifFKWcnHacRruDjszrkSp8GPSMGjJtWTQEGdZWN2tCdw6/b8mJtjcNtStr2pq4UHQ4FNkrJiASLJtWeBpBc6AD1z root@dhcp40-146.desklab.eng.bos.redhat.com", "stdout_lines": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH3LeWIUQxhdwpMtbuY4j5GnWpl0hA7gsy5L0Dixb7vnuDfjkPv7rUXttVjQW172X/RjuviuByvnFUZlMOt3OVHhmUpQQvO2uFJGl7lid+EJCxHKFJh8sIMn3yP6PEAn7OZSVHZ1D8lVWuCmobur4vOLj0sCeRDso6fcKxpTj/a66u27NuMeLE/GNAYLuorZF9WSHqYzyCrZtn7DEVIphTWOiFg9zoQjuZ1u906gzU+E6Owxip3OVyWalZG4weifFKWcnHacRruDjszrkSp8GPSMGjJtWTQEGdZWN2tCdw6/b8mJtjcNtStr2pq4UHQ4FNkrJiASLJtWeBpBc6AD1z root@dhcp40-146.desklab.eng.bos.redhat.com"]}
+
+TASK [libvirt : remote: cat out contents of public key] ******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:97
+skipping: [localhost] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Add additional storage] **********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:104
+changed: [localhost] => (item=[u'centos71-6c27be', u'/var/lib/libvirt/images/linchpin/', u'qcow2', u'10G', 0]) => {"changed": true, "cmd": ["qemu-img", "resize", "/var/lib/libvirt/images/linchpin//centos71-6c27be_0.qcow2", "+10G"], "definition": ["centos71-6c27be", "/var/lib/libvirt/images/linchpin/", "qcow2", "10G", 0], "delta": "0:00:00.045231", "end": "2018-07-31 16:01:56.567348", "rc": 0, "start": "2018-07-31 16:01:56.522117", "stderr": "", "stderr_lines": [], "stdout": "Image resized.", "stdout_lines": ["Image resized."]}
+
+TASK [libvirt : Add additional storage] **********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:117
+skipping: [localhost] => (item=[u'centos71-6c27be', u'/var/lib/libvirt/images/linchpin/', u'qcow2', u'10G', 0])  => {"changed": false, "definition": ["centos71-6c27be", "/var/lib/libvirt/images/linchpin/", "qcow2", "10G", 0], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Create directories] **************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:132
+skipping: [localhost] => (item=[u'centos71-6c27be', 0])  => {"changed": false, "definition": ["centos71-6c27be", 0], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Create directories] **************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:145
+changed: [localhost] => (item=[u'centos71-6c27be', 0]) => {"changed": true, "definition": ["centos71-6c27be", 0], "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/tmp/vm-centos71-6c27be_0", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 40, "state": "directory", "uid": 0}
+
+TASK [libvirt : Prepare cloud-config/user-data-local] ********************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:156
+changed: [localhost] => (item=[u'centos71-6c27be', 0]) => {"changed": true, "checksum": "d582403f171499717803dc7fdd3d9951acd9a1d0", "definition": ["centos71-6c27be", 0], "dest": "/tmp/vm-centos71-6c27be_0/user-data", "gid": 0, "group": "root", "md5sum": "e418aa62fc00b749655fdba508244139", "mode": "0644", "owner": "root", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 1406, "src": "/root/.ansible/tmp/ansible-tmp-1533067317.03-228903746255226/source", "state": "file", "uid": 0}
+
+TASK [libvirt : Prepare cloud-config/user-data-remote] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:169
+skipping: [localhost] => (item=[u'centos71-6c27be', 0])  => {"changed": false, "definition": ["centos71-6c27be", 0], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Prepare cloud-config/meta-data] **************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:182
+changed: [localhost] => (item=[u'centos71-6c27be', 0]) => {"changed": true, "checksum": "76ba34567abcead701c8787a9524bb78fb841e77", "definition": ["centos71-6c27be", 0], "dest": "/tmp/vm-centos71-6c27be_0/meta-data", "gid": 0, "group": "root", "md5sum": "563e6f5ec7a5436413b747c2d0cecd59", "mode": "0644", "owner": "root", "secontext": "unconfined_u:object_r:user_tmp_t:s0", "size": 77, "src": "/root/.ansible/tmp/ansible-tmp-1533067317.42-190169995878615/source", "state": "file", "uid": 0}
+
+TASK [libvirt : Prepare cloud-config/meta-data remote] *******************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:193
+skipping: [localhost] => (item=[u'centos71-6c27be', 0])  => {"changed": false, "definition": ["centos71-6c27be", 0], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : localhost: Generate ci data cd image for cloud-init when cloud config is defined] ************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:206
+changed: [localhost] => (item=[u'centos71-6c27be', 0]) => {"changed": true, "cmd": ["mkisofs", "-o", "/tmp/vm-centos71-6c27be_0.iso", "-V", "cidata", "-r", "-J", "--quiet", "/tmp/vm-centos71-6c27be_0/user-data", "/tmp/vm-centos71-6c27be_0/meta-data"], "definition": ["centos71-6c27be", 0], "delta": "0:00:00.009578", "end": "2018-07-31 16:01:57.927476", "rc": 0, "start": "2018-07-31 16:01:57.917898", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [libvirt : remote_host: Generate ci data cd image for cloud-init when cloud config is defined] **********************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:215
+skipping: [localhost] => (item=[u'centos71-6c27be', 0])  => {"changed": false, "definition": ["centos71-6c27be", 0], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Install VM] **********************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:226
+failed: [localhost] (item=[u'centos71-6c27be', u'/var/lib/libvirt/images/linchpin/', u'qcow2', u'virbr0', u'2048', u'qcow2', u'qemu:///system', 0]) => {"changed": false, "cmd": "virt-install --connect qemu:///system --import --name centos71-6c27be_0 --autostart --network bridge=virbr0,model=virtio --ram 2048 --disk path=/var/lib/libvirt/images/linchpin//centos71-6c27be_0.qcow2,format=qcow2,bus=virtio,cache=none --disk path=/tmp/vm-centos71-6c27be_0.iso,device=cdrom --wait 10 --os-type=linux --nographics", "definition": ["centos71-6c27be", "/var/lib/libvirt/images/linchpin/", "qcow2", "virbr0", "2048", "qcow2", "qemu:///system", 0], "msg": "[Errno 2] No such file or directory", "rc": 2}
+...ignoring
+
+TASK [libvirt : Remove cloud-init cdrom] *********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:243
+failed: [localhost] (item=[u'centos71-6c27be', u'qemu:///system', 0]) => {"changed": true, "cmd": ["virsh", "-c", "qemu:///system", "change-media", "centos71-6c27be_0", "hda", "--eject", "--config"], "definition": ["centos71-6c27be", "qemu:///system", 0], "delta": "0:00:00.045710", "end": "2018-07-31 16:01:58.476108", "msg": "non-zero return code", "rc": 1, "start": "2018-07-31 16:01:58.430398", "stderr": "error: failed to get domain 'centos71-6c27be_0'\nerror: Domain not found: no domain with matching name 'centos71-6c27be_0'", "stderr_lines": ["error: failed to get domain 'centos71-6c27be_0'", "error: Domain not found: no domain with matching name 'centos71-6c27be_0'"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [libvirt : define node when the cloud_config not defined] ***********************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:254
+skipping: [localhost] => (item=[u'qemu:///system', {'cloud_config': {'users': [{'name': u'herlo', 'sudo': u'ALL=(ALL) NOPASSWD:ALL', 'lock_passwd': True, 'gecos': u'Clint Savage', 'groups': u'wheel', 'ssh-import-id': u'gh:herlo'}]}, 'count': 1, 'name': u'centos71', 'uri': u'qemu:///system', 'ssh_key': u'libvirt', 'vcpus': 1, 'additional_storage': u'10G', 'role': u'libvirt_node', 'memory': 2048, 'arch': u'x86_64', 'networks': [{'name': u'default'}], 'image_src': u'http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz'}, 0, u'/var/lib/libvirt/images/linchpin/', u'qcow2'])  => {"changed": false, "definition": ["qemu:///system", {"additional_storage": "10G", "arch": "x86_64", "cloud_config": {"users": [{"gecos": "Clint Savage", "groups": "wheel", "lock_passwd": true, "name": "herlo", "ssh-import-id": "gh:herlo", "sudo": "ALL=(ALL) NOPASSWD:ALL"}]}, "count": 1, "image_src": "http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz", "memory": 2048, "name": "centos71", "networks": [{"name": "default"}], "role": "libvirt_node", "ssh_key": "libvirt", "uri": "qemu:///system", "vcpus": 1}, 0, "/var/lib/libvirt/images/linchpin/", "qcow2"], "skip_reason": "Conditional result was False"}
+
+TASK [libvirt : Start VM] ************************************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:270
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: VMNotFound: virtual machine centos71-6c27be_0 not found
+failed: [localhost] (item=[u'centos71-6c27be', u'qemu:///system', 0]) => {"changed": false, "definition": ["centos71-6c27be", "qemu:///system", 0], "msg": "virtual machine centos71-6c27be_0 not found"}
+...ignoring
+
+TASK [libvirt : Start relevant networks] *********************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:283
+ok: [localhost] => (item=[{'name': u'default'}, u'qemu:///system']) => {"changed": false, "net_item": [{"name": "default"}, "qemu:///system"]}
+
+TASK [libvirt : mac_and_ip | extract mac address] ************************************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:295
+changed: [localhost] => (item=[u'centos71-6c27be', u'qemu:///system', 0]) => {"changed": true, "cmd": "virsh -c qemu:///system dumpxml centos71-6c27be_0 | grep 'mac address' | cut -f 2 -d \"'\"", "delta": "0:00:00.017519", "end": "2018-07-31 16:01:59.229616", "node": ["centos71-6c27be", "qemu:///system", 0], "rc": 0, "start": "2018-07-31 16:01:59.212097", "stderr": "error: failed to get domain 'centos71-6c27be_0'\nerror: Domain not found: no domain with matching name 'centos71-6c27be_0'", "stderr_lines": ["error: failed to get domain 'centos71-6c27be_0'", "error: Domain not found: no domain with matching name 'centos71-6c27be_0'"], "stdout": "", "stdout_lines": []}
+
+TASK [libvirt : mac_and_ip | wait up to 5 mins for dhcp ip address] ******************************************************
+task path: /home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/roles/libvirt/tasks/provision_libvirt_node.yml:308
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (30 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (29 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (28 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (27 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (26 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (25 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (24 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (23 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (22 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (21 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (20 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (19 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (18 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (17 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (16 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (15 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (14 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (13 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (12 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (11 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (10 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (9 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (8 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (7 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (6 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (5 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (4 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (3 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (2 retries left).
+FAILED - RETRYING: mac_and_ip | wait up to 5 mins for dhcp ip address (1 retries left).
+failed: [localhost] (item=0) => {"attempts": 30, "changed": true, "cmd": "echo \"\" && /usr/sbin/arp -an | grep -F  | cut -f 2 -d \"(\" | cut -f 1 -d \")\"", "delta": "0:00:00.003961", "end": "2018-07-31 16:07:04.766960", "mac": 0, "rc": 0, "start": "2018-07-31 16:07:04.762999", "stderr": "Usage: grep [OPTION]... PATTERN [FILE]...\nTry 'grep --help' for more information.", "stderr_lines": ["Usage: grep [OPTION]... PATTERN [FILE]...", "Try 'grep --help' for more information."], "stdout": "", "stdout_lines": []}
+	to retry, use: --limit @/home/ryan/.virtualenvs/linchpin/lib/python2.7/site-packages/linchpin-1.5.5a16-py2.7.egg/linchpin/provision/libvirt.retry
+
+PLAY RECAP ***************************************************************************************************************
+localhost                  : ok=43   changed=10   unreachable=0    failed=1   
+
+hook postinv initiated
+hook postup initiated
+
+ID: 5
+Action: up
+
+Target              	Run ID	uHash	Exit Code 
+-------------------------------------------------
+libvirt-new         	     6	6c27be	        2
+
