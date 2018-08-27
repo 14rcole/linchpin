@@ -199,6 +199,18 @@ def test_validate_topology():
 
     assert success
 
+@with_setup(setup_lp_api)
+def test_validate_layout():
+    success = False
+    layout = provision_data.get(provider).get('layout')
+    try:
+        resources = lpa._validate_layout(layout)
+        success = len(resources)
+    except Exception:
+        pass
+
+    assert success
+
 
 @with_setup(setup_lp_api)
 def test_do_action():
