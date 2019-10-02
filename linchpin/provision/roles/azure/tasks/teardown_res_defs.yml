@@ -1,3 +1,0 @@
----
-- name: "Teardown resource type : {{ res_def['role'] }}"
-  include: "teardown_{{ res_def['role'] }}.yml"
